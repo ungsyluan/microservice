@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form>
+	<input type="file" id="_testFile"/>
+	<input type="button" id="_testButton"/>
+</form>
+<script type="text/javascript">
+$('#_testButton').bind('click', function () {
+    var file = document.getElementById('_testFile').files[0];
+
+    $.ajax({
+        url: "/two",
+        type: "POST",
+        data: file,
+        processData: false
+    });
+});
+</script>
+</body>
+</html>
